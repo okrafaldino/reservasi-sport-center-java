@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<inet:Report xmlns:inet="http://www.inetsoftware.de" major_version="8" minor_version="0" major_xml_version="7" minor_xml_version="9" count="3" id="0">
+    <Datasource dll="dsfutsal_configuration.dll">
+      <DataSourceConfiguration name="dsfutsal">
+        <property name="aliasToken" value=""/>
+        <property name="useCursorFetch" value="false"/>
+        <property name="emulateLocators" value="false"/>
+        <property name="host" value="localhost"/>
+        <property name="noTimezoneConversionForTimeType" value="false"/>
+        <property name="url" value="jdbc:mysql://{host}:{port}/{database}"/>
+        <property name="connectionCollation" value=""/>
+        <property name="prepStmtCacheSize" value="25"/>
+        <property name="databaseClassName" value=""/>
+        <property name="locatorFetchBufferSize" value="1048576"/>
+        <property name="supportsOrderBy" value="true"/>
+        <property name="defaultFetchSize" value="0"/>
+        <property name="supportsSQL92" value="true"/>
+        <property name="maxRows" value="-1"/>
+        <property name="prepStmtCacheSqlLimit" value="256"/>
+        <property name="paranoid" value="false"/>
+        <property name="characterEncoding" value=""/>
+        <property name="metadataCacheSize" value="50"/>
+        <property name="dynamicCalendars" value="false"/>
+        <property name="connectTimeout" value="0"/>
+        <property name="blobSendChunkSize" value="1048576"/>
+        <property name="validationQuery" value=""/>
+        <property name="zeroDateTimeBehavior" value="exception"/>
+        <property name="sessionVariables" value=""/>
+        <property name="useFastIntParsing" value="true"/>
+        <property name="useReadAheadInput" value="true"/>
+        <property name="driverLibrary" value=""/>
+        <property name="useGmtMillisForDatetimes" value="false"/>
+        <property name="useCompression" value="false"/>
+        <property name="clobCharacterEncoding" value=""/>
+        <property name="useUnicode" value="true"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="user" value="root"/>
+        <property name="autoDeserialize" value="false"/>
+        <property name="supportsWhere" value="true"/>
+        <property name="emptyStringsConvertToZero" value="true"/>
+        <property name="password" value="00155766FFF32D951FC85EA673A465F93515572D691407DB62FEAB2FC203B40ED5"/>
+        <property name="cacheCallableStmts" value="false"/>
+        <property name="identifierQuoteString" value=""/>
+        <property name="port" value="3306"/>
+        <property name="quotesLowerCase" value="false"/>
+        <property name="useTimezone" value="false"/>
+        <property name="socketTimeout" value="0"/>
+        <property name="database" value="db_futsal"/>
+        <property name="requireSSL" value="false"/>
+        <property name="useSSL" value="false"/>
+        <property name="serverTimezone" value=""/>
+        <property name="supportsParenthesesForJoin" value="true"/>
+        <property name="savePassword" value="true"/>
+      </DataSourceConfiguration>
+      <Tablesource alias="tbl_booking" databaseIdentifier="tbl_booking">
+        <Column name="no_trans" type="11" description="no_trans" />
+        <Column name="tgl_booking" type="9" description="tgl_booking" />
+        <Column name="nama" type="11" description="nama" />
+        <Column name="lama" type="11" description="lama" />
+        <Column name="jam_mulai" type="11" description="jam_mulai" />
+        <Column name="jam_selesai" type="11" description="jam_selesai" />
+        <Column name="kd_lapangan" type="11" description="kd_lapangan" />
+        <Column name="nm_lapangan" type="11" description="nm_lapangan" />
+        <Column name="jenis" type="11" description="jenis" />
+        <Column name="harga" type="6" description="harga" />
+        <Column name="total" type="6" description="total" />
+        <Column name="dp" type="6" description="dp" />
+        <Column name="sisa" type="6" description="sisa" />
+      </Tablesource>
+      <Tablesource alias="tbl_lapangan" databaseIdentifier="tbl_lapangan">
+        <Column name="kd_lapangan" type="11" description="kd_lapangan" />
+        <Column name="nm_lapangan" type="11" description="nm_lapangan" />
+        <Column name="jenis" type="11" description="jenis" />
+        <Column name="harga" type="6" description="harga" />
+      </Tablesource>
+    </Datasource>
+  <Database>
+
+    <Join from="tbl_booking" to="tbl_lapangan" type="inn">
+      <Link from="kd_lapangan" to="kd_lapangan" type="eq"/>
+    </Join>
+    <QueryChanges mask="0" count="2">
+      <Attribute name="queryChange" value="null"/>
+      <Attribute name="queryChange" value="null"/>
+    </QueryChanges>
+  </Database>
+  <FormulaFields count="0">
+  </FormulaFields>
+
+  <PromptFields count="1">
+    <Field type="PromptVarField" valueType="11">
+      <Attribute name="name" value="prompt0"/>
+      <Attribute name="allow_multiple_values" value="false"/>
+      <Attribute name="discrete_or_range" value="0"/>
+      <Attribute name="allow editing" value="true"/>
+      <Attribute name="description_only" value="false"/>
+      <Attribute name="edit mask" value=""/>
+      <Attribute name="prompt_text" value=""/>
+      <Attribute name="use_range" value="false"/>
+    </Field>
+  </PromptFields>
+
+  <SQLFields count="0">
+  </SQLFields>
+
+  <SortFields count="0">
+  </SortFields>
+
+  <ReportProperties>
+    <Attribute name="page width" value="12240"/>
+    <Attribute name="page height" value="15840"/>
+    <Attribute name="page orientation" value="1"/>
+    <Attribute name="page margin left" value="720"/>
+    <Attribute name="page margin right" value="720"/>
+    <Attribute name="page margin top" value="720"/>
+    <Attribute name="page margin bottom" value="720"/>
+    <Attribute name="report title" value="Report1"/>
+    <Attribute name="report last saved" value="2 Jan 2023 10:31:24 GMT"/>
+    <Attribute name="report created" value="2 Jan 2023 06:51:01 GMT"/>
+    <Attribute name="mailing label type 1" value=""/>
+    <Attribute name="mailing label type 2" value=""/>
+    <Attribute name="format with multiple columns" value="false"/>
+    <Attribute name="mailing label width" value="0"/>
+    <Attribute name="mailing label height" value="0"/>
+    <Attribute name="mailing label distance vertical" value="0"/>
+    <Attribute name="mailing label distance horizontal" value="0"/>
+    <Attribute name="across then down" value="false"/>
+    <Attribute name="format groups with multiple columns" value="false"/>
+    <Attribute name="distinct" value="false"/>
+    <Attribute name="ignore filtering" value="false"/>
+    <Attribute name="ignore sorting" value="false"/>
+    <Attribute name="convert date time" value="0"/>
+    <Attribute name="suppress if no rows" value="false"/>
+    <Attribute name="convert null values to default" value="false"/>
+    <Attribute name="hide PageFooter inside ReportHeader" value="false"/>
+    <Attribute name="form print" value="false"/>
+    <Attribute name="printing enabled" value="true"/>
+    <Attribute name="clipboard enabled" value="true"/>
+    <Attribute name="export enabled" value="true"/>
+    <Attribute name="group tree visible" value="true"/>
+  </ReportProperties>
+  <AreaPair type="PageAreaPair" id="0">
+    <Area type="PageHeader" count="1">
+      <Section type="PageHeader" count="26" width="10800" height="1050" id="0">
+        <Element type="Text" count="1" x_position="0" y_position="450" width="900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[No Transaksi]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="900" y2_position="30" x_position="900" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="941" y_position="450" width="701" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Tanggal Booking]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="1800" y2_position="60" x_position="1800" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="1800" y_position="600" width="701" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Nama]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="2523" y2_position="30" x_position="2523" y_position="420" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="2550" y_position="600" width="567" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Lama]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="3150" y2_position="30" x_position="3150" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="3150" y_position="600" width="701" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Mulai]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="3900" y2_position="30" x_position="3900" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="3900" y_position="600" width="701" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Selesai]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="4650" y2_position="30" x_position="4650" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Line" x2_position="5550" y2_position="30" x_position="5550" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Line" x2_position="6450" y2_position="30" x_position="6450" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Line" x2_position="7350" y2_position="30" x_position="7350" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="8100" y_position="450" width="900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Total Bayar]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="8100" y2_position="30" x_position="8100" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="9000" y_position="600" width="701" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[DP]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="9000" y2_position="30" x_position="9000" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="9750" y_position="600" width="900" height="240">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Sisa]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="9750" y2_position="30" x_position="9750" y_position="450" width="0" height="0">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <LineProperties>
+            <Attribute name="id" value="3"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="4650" y_position="450" width="900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Kode Lapangan]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Text" count="1" x_position="5550" y_position="450" width="900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Nama Lapangan]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Text" count="1" x_position="6450" y_position="450" width="900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Jenis Lapangan]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Text" count="1" x_position="7350" y_position="450" width="701" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+            <![CDATA[Harga per Jam]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Box" x2_position="10650" y2_position="0" x_position="0" y_position="450" width="0" height="0">
+          <BoxProperties>
+            <Attribute name="close border on page break" value="true"/>
+              <LineProperties>
+                <Attribute name="id" value="3"/>
+              </LineProperties>
+          </BoxProperties>
+        </Element>
+      </Section>
+    </Area>
+    <Area type="PageFooter" count="1">
+      <Section type="PageFooter" count="0" width="10800" height="800" id="1">
+      </Section>
+    </Area>
+  </AreaPair>
+
+  <AreaPair type="ReportAreaPair" id="0">
+    <Area type="ReportHeader" count="1">
+      <Section type="ReportHeader" count="5" width="10800" height="1800" id="2">
+        <Element type="Text" count="1" x_position="2550" y_position="150" width="6300" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font name" value="Dialog"/>
+                <Attribute name="font size" value="320"/>
+                <Attribute name="font style" value="1"/>
+              </FontProperties>
+            <![CDATA[ZONE 73 SPORT CENTER PADANG]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Picture" x_position="150" y_position="450" width="1800" height="420">
+          <PictureProperties>
+            <Attribute name="id" value="1"/>
+          </PictureProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="2250" y_position="600" width="6900" height="450">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font name" value="Dialog"/>
+                <Attribute name="font size" value="280"/>
+              </FontProperties>
+            <![CDATA[Jl .Rawang Ketaping No.20 , Padang , Sumatera Barat]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Line" x2_position="10650" y2_position="1200" x_position="150" y_position="1200" width="0" height="0">
+          <LineProperties>
+            <Attribute name="style" value="2"/>
+          </LineProperties>
+        </Element>
+        <Element type="Text" count="1" x_position="4050" y_position="1500" width="2850" height="300">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font name" value="sansserif"/>
+                <Attribute name="font size" value="280"/>
+              </FontProperties>
+            <![CDATA[Laporan Data Booking]]>
+            </Element>
+          </Element>
+        </Element>
+      </Section>
+    </Area>
+    <Area type="ReportFooter" count="1">
+      <Section type="ReportFooter" count="5" width="10800" height="2250" id="3">
+        <Element type="Text" count="1" x_position="8250" y_position="300" width="1050" height="300">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font size" value="240"/>
+              </FontProperties>
+            <![CDATA[Padang ,]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="FieldElement" x_position="9450" y_position="300" width="1200" height="300">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="1"/>
+          </CommonProperties>
+          <FontProperties>
+            <Attribute name="font size" value="240"/>
+          </FontProperties>
+          <Reference name="field" type="SpecialVarField" id="0"/>
+        </Element>
+        <Element type="Text" count="1" x_position="8550" y_position="750" width="1800" height="300">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="2"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font name" value="sansserif"/>
+                <Attribute name="font size" value="240"/>
+              </FontProperties>
+            <![CDATA[Pimpinan]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="Text" count="1" x_position="8550" y_position="1800" width="1800" height="300">
+          <Element type="Paragraph" count="1">
+            <CommonProperties>
+              <Attribute name="horizontal align" value="1"/>
+            </CommonProperties>
+            <Element type="TextPart">
+              <FontProperties>
+                <Attribute name="font name" value="sansserif"/>
+              </FontProperties>
+            <![CDATA[    (                             )]]>
+            </Element>
+          </Element>
+        </Element>
+        <Element type="FieldElement" x_position="8850" y_position="1800" width="1200" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="PromptVarField" refname="?prompt0"/>
+        </Element>
+      </Section>
+    </Area>
+  </AreaPair>
+
+  <AreaPair type="DetailArea" id="1">
+    <Area type="Detail" count="1">
+      <Section type="Detail" count="14" width="10800" height="750" id="4">
+        <Element type="FieldElement" x_position="120" y_position="120" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.no_trans"/>
+        </Element>
+        <Element type="FieldElement" x_position="941" y_position="120" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.tgl_booking"/>
+        </Element>
+        <Element type="FieldElement" x_position="1800" y_position="150" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.nama"/>
+        </Element>
+        <Element type="FieldElement" x_position="2583" y_position="120" width="567" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.lama"/>
+        </Element>
+        <Element type="FieldElement" x_position="3150" y_position="150" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.jam_mulai"/>
+        </Element>
+        <Element type="FieldElement" x_position="3900" y_position="150" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.jam_selesai"/>
+        </Element>
+        <Element type="FieldElement" x_position="8100" y_position="150" width="900" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <NumberProperties>
+            <Attribute name="n decimal places" value="0"/>
+            <Attribute name="thousand seperators symbol" value=","/>
+            <Attribute name="decimal seperators symbol" value="."/>
+            <Attribute name="currency symbol" value="¤"/>
+          </NumberProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.total"/>
+        </Element>
+        <Element type="FieldElement" x_position="9000" y_position="150" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <NumberProperties>
+            <Attribute name="n decimal places" value="0"/>
+            <Attribute name="thousand seperators symbol" value=","/>
+            <Attribute name="decimal seperators symbol" value="."/>
+            <Attribute name="currency symbol" value="¤"/>
+          </NumberProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.dp"/>
+        </Element>
+        <Element type="FieldElement" x_position="9750" y_position="150" width="900" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <NumberProperties>
+            <Attribute name="n decimal places" value="0"/>
+            <Attribute name="thousand seperators symbol" value=","/>
+            <Attribute name="decimal seperators symbol" value="."/>
+            <Attribute name="currency symbol" value="¤"/>
+          </NumberProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.sisa"/>
+        </Element>
+        <Element type="FieldElement" x_position="4650" y_position="150" width="900" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_lapangan.kd_lapangan"/>
+        </Element>
+        <Element type="FieldElement" x_position="5550" y_position="150" width="900" height="450">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.nm_lapangan"/>
+        </Element>
+        <Element type="FieldElement" x_position="6450" y_position="150" width="900" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.jenis"/>
+        </Element>
+        <Element type="FieldElement" x_position="7350" y_position="150" width="701" height="240">
+          <CommonProperties>
+            <Attribute name="horizontal align" value="2"/>
+          </CommonProperties>
+          <NumberProperties>
+            <Attribute name="n decimal places" value="0"/>
+            <Attribute name="thousand seperators symbol" value=","/>
+            <Attribute name="decimal seperators symbol" value="."/>
+            <Attribute name="currency symbol" value="¤"/>
+          </NumberProperties>
+          <Reference name="field" type="DatabaseField" refname="tbl_booking.harga"/>
+        </Element>
+        <Element type="Line" x2_position="10650" y2_position="0" x_position="0" y_position="0" width="0" height="0">
+        </Element>
+      </Section>
+    </Area>
+  </AreaPair>
+
+<Image count="7847" name="embedding 1">
+<![CDATA[
+-119 80 78 71 13 10 26 10 0 0 0 13 73 72 68 82 0 0 0 -27 0 0 0 58 8 6 0 0 0 79 -95 -98 -20 
+0 0 10 55 105 67 67 80 115 82 71 66 32 73 69 67 54 49 57 54 54 45 50 46 49 0 0 120 -100 -99 -106 119 
+84 83 -39 22 -121 -49 -67 55 -67 80 -110 16 -118 -108 -48 107 104 82 2 72 13 -67 72 -111 46 42 49 9 16 74 -64 -112 
+0 34 54 68 84 112 68 81 -111 -90 8 50 40 -32 -128 -93 67 -111 -79 34 -118 -123 1 81 -79 -21 4 25 68 -44 113 112 
+20 27 -106 73 100 -83 25 -33 -68 121 -17 -51 -101 -33 31 -9 126 107 -97 -67 -49 -35 103 -17 125 -42 -70 0 -112 -4 -125 5 
+-62 76 88 9 -128 12 -95 88 20 -31 -25 -59 -120 -115 -117 103 96 7 1 12 -16 0 3 108 0 -32 112 -77 -77 66 22 -8 
+70 2 -103 2 124 -40 -116 108 -103 19 -8 23 -67 -70 14 32 -7 -5 42 -45 63 -116 -63 0 -1 -97 -108 -71 89 34 49 0 
+80 -104 -116 -25 -14 -8 -39 92 25 23 -55 56 61 87 -100 37 -73 79 -55 -104 -74 52 77 -50 48 74 -50 34 89 -126 50 86 
+-109 115 -14 44 91 124 -10 -103 101 15 57 -13 50 -124 60 25 -53 115 -50 -30 101 -16 -28 -36 39 -29 -115 57 18 -66 -116 -111 
+96 25 23 -25 8 -8 -71 50 -66 38 99 -125 116 73 -122 64 -58 111 -28 -79 25 124 78 54 0 40 -110 -36 46 -26 115 83 
+100 108 45 99 -110 40 50 -126 45 -29 121 0 -32 72 -55 95 -16 -46 47 88 -52 -49 19 -53 15 -59 -50 -52 90 46 18 36 
+-89 -120 25 38 92 83 -122 -115 -109 19 -117 -31 -49 -49 77 -25 -117 -59 -52 48 14 55 -115 35 -30 49 -40 -103 25 89 28 -31 
+114 0 102 -49 -4 89 20 121 109 25 -78 34 59 -40 56 57 56 48 109 45 109 -66 40 -44 127 93 -4 -101 -110 -9 118 -106 
+94 -124 127 -18 25 68 31 -8 -61 -10 87 126 -103 13 0 -80 -90 101 -75 -39 -6 -121 109 105 21 0 93 -21 1 80 -69 -3 
+-121 -51 96 47 0 -118 -78 -66 117 14 125 113 30 -70 124 94 82 -60 -30 44 103 43 -85 -36 -36 92 75 1 -97 107 41 47 
+-24 -17 -6 -97 14 127 67 95 124 -49 82 -66 -35 -17 -27 97 120 -13 -109 56 -110 116 49 67 94 55 110 102 122 -90 68 -60 
+-56 -50 -30 112 -7 12 -26 -97 -121 -8 31 7 -2 117 30 22 17 -4 36 -66 -120 47 -108 69 68 -53 -90 76 32 76 -106 -75 
+91 -56 19 -120 5 -103 66 -122 64 -8 -97 -102 -8 15 -61 -2 -92 -39 -71 -106 -119 -38 -8 17 -48 -106 88 2 -91 33 26 64 
+126 30 0 40 42 17 32 9 123 100 43 -48 -17 125 11 -58 71 3 -7 -51 -117 -47 -103 -104 -99 -5 -49 -126 -2 125 87 -72 
+76 -2 -56 22 36 127 -114 99 71 68 50 -72 18 81 -50 -20 -102 -4 90 2 52 32 0 69 64 3 -22 64 27 -24 3 19 
+-64 4 -74 -64 17 -72 0 15 -32 3 2 65 40 -120 4 113 96 49 -32 -126 20 -112 1 68 32 23 20 -128 -75 -96 24 -108 
+-126 -83 96 39 -88 6 117 -96 17 52 -125 54 112 24 116 -127 99 -32 52 56 7 46 -127 -53 96 4 -36 1 82 48 14 -98 
+-128 41 -16 10 -52 64 16 -124 -123 -56 16 21 82 -121 116 32 67 -56 28 -78 -123 88 -112 27 -28 3 5 67 17 80 28 -108 
+8 37 67 66 72 2 21 64 -21 -96 82 -88 28 -86 -122 -22 -95 102 -24 91 -24 40 116 26 -70 0 13 67 -73 -96 81 104 
+18 -6 21 122 7 35 48 9 -90 -63 90 -80 17 108 5 -77 96 79 56 8 -114 -124 23 -63 -55 -16 50 56 31 46 -126 -73 
+-64 -107 112 3 124 16 -18 -124 79 -61 -105 -32 17 88 10 63 -127 -89 17 -128 16 17 58 -94 -117 48 17 22 -62 70 66 -111 
+120 36 9 17 33 -85 -112 18 -92 2 105 64 -38 -112 30 -92 31 -71 -118 72 -111 -89 -56 91 20 6 69 69 49 80 76 -108 
+11 -54 31 21 -123 -30 -94 -106 -95 86 -95 54 -93 -86 81 7 80 -99 -88 62 -44 85 -44 40 106 10 -11 17 77 70 107 -94 
+-51 -47 -50 -24 0 116 44 58 25 -99 -117 46 70 87 -96 -101 -48 29 -24 -77 -24 17 -12 56 -6 21 6 -125 -95 99 -116 49 
+-114 24 127 76 28 38 21 -77 2 -77 25 -77 27 -45 -114 57 -123 25 -58 -116 97 -90 -79 88 -84 58 -42 28 -21 -118 13 -59 
+114 -80 98 108 49 -74 10 123 16 123 18 123 5 59 -114 125 -125 35 -30 116 112 -74 56 95 92 60 78 -120 43 -60 85 -32 
+90 112 39 112 87 112 19 -72 25 -68 18 -34 16 -17 -116 15 -59 -13 -16 -53 -15 101 -8 70 124 15 126 8 63 -114 -97 33 
+40 19 -116 9 -82 -124 72 66 42 97 45 -95 -110 -48 70 56 75 -72 75 120 65 36 18 -11 -120 78 -60 112 -94 -128 -72 -122 
+88 73 60 68 60 79 28 37 -66 37 81 72 102 36 54 41 -127 36 33 109 33 -19 39 -99 34 -35 34 -67 32 -109 -55 70 
+100 15 114 60 89 76 -34 66 110 38 -97 33 -33 39 -65 81 -96 42 88 42 4 40 -16 20 86 43 -44 40 116 42 92 81 
+120 -90 -120 87 52 84 -12 84 92 -84 -104 -81 88 -95 120 68 113 72 -15 -87 18 94 -55 72 -119 -83 -60 81 90 -91 84 -93 
+116 84 -23 -122 -46 -76 50 85 -39 70 57 84 57 67 121 -77 114 -117 -14 5 -27 71 20 44 -59 -120 -30 67 -31 81 -118 40 
+-5 40 103 40 99 84 -124 -86 79 101 83 -71 -44 117 -44 70 -22 89 -22 56 13 67 51 -90 5 -48 82 105 -91 -76 111 104 
+-125 -76 41 21 -118 -118 -99 74 -76 74 -98 74 -115 -54 113 21 41 29 -95 27 -47 3 -24 -23 -12 50 -6 97 -6 117 -6 59 
+85 45 85 79 85 -66 -22 38 -43 54 -43 43 -86 -81 -43 -26 -88 121 -88 -15 -43 74 -44 -38 -43 70 -44 -34 -87 51 -44 125 
+-44 -45 -44 -73 -87 119 -87 -33 -45 64 105 -104 105 -124 107 -28 106 -20 -47 56 -85 -15 116 14 109 -114 -53 28 -18 -100 -110 57 
+-121 -25 -36 -42 -124 53 -51 52 35 52 87 104 -18 -45 28 -48 -100 -42 -46 -42 -14 -45 -54 -46 -86 -46 58 -93 -11 84 -101 -82 
+-19 -95 -99 -86 -67 67 -5 -124 -10 -92 14 85 -57 77 71 -96 -77 67 -25 -92 -50 99 -122 10 -61 -109 -111 -50 -88 100 -12 49 
+-90 116 53 117 -3 117 37 -70 -11 -70 -125 -70 51 122 -58 122 81 122 -123 122 -19 122 -9 -12 9 -6 44 -3 36 -3 29 -6 
+-67 -6 83 6 58 6 33 6 5 6 -83 6 -73 13 -15 -122 44 -61 20 -61 93 -122 -3 -122 -81 -115 -116 -115 98 -116 54 24 
+117 25 61 50 86 51 14 48 -50 55 110 53 -66 107 66 54 113 55 89 102 -46 96 114 -51 20 99 -54 50 77 51 -35 109 
+122 -39 12 54 -77 55 75 49 -85 49 27 50 -121 -51 29 -52 5 -26 -69 -51 -121 45 -48 22 78 22 66 -117 6 -117 27 76 
+18 -45 -109 -103 -61 108 101 -114 90 -46 45 -125 45 11 45 -69 44 -97 89 25 88 -59 91 109 -77 -22 -73 -6 104 109 111 -99 
+110 -35 104 125 -57 -122 98 19 104 83 104 -45 99 -13 -85 -83 -103 45 -41 -74 -58 -10 -38 92 -14 92 -33 -71 -85 -25 118 -49 
+125 110 103 110 -57 -73 -37 99 119 -45 -98 106 31 98 -65 -63 -66 -41 -2 -125 -125 -93 -125 -56 -95 -51 97 -46 -47 -64 49 -47 
+-79 -42 -15 6 -117 -58 10 99 109 102 -99 119 66 59 121 57 -83 118 58 -26 -12 -42 -39 -63 89 -20 124 -40 -7 23 23 -90 
+75 -102 75 -117 -53 -93 121 -58 -13 -8 -13 26 -25 -115 -71 -22 -71 114 92 -21 93 -91 110 12 -73 68 -73 -67 110 82 119 93 
+119 -114 123 -125 -5 3 15 125 15 -98 71 -109 -57 -124 -89 -87 103 -86 -25 65 -49 103 94 -42 94 34 -81 14 -81 -41 108 103 
+-10 74 -10 41 111 -60 -37 -49 -69 -60 123 -48 -121 -30 19 -27 83 -19 115 -33 87 -49 55 -39 -73 -43 119 -54 -49 -34 111 -123 
+-33 41 127 -76 127 -112 -1 54 -1 27 1 90 1 -36 -128 -26 -128 -87 64 -57 -64 -107 -127 125 65 -92 -96 5 65 -43 65 15 
+-126 -51 -126 69 -63 61 33 112 72 96 -56 -10 -112 -69 -13 13 -25 11 -25 119 -123 -126 -48 -128 -48 -19 -95 -9 -62 -116 -61 -106 
+-123 125 31 -114 9 15 11 -81 9 127 24 97 19 81 16 -47 -65 -128 -70 96 -55 -126 -106 5 -81 34 -67 34 -53 34 -17 68 
+-103 68 73 -94 122 -93 21 -93 19 -94 -101 -93 95 -57 120 -57 -108 -57 72 99 -83 98 87 -58 94 -118 -45 -120 19 -60 117 -57 
+99 -29 -93 -29 -101 -30 -89 23 -6 44 -36 -71 112 60 -63 62 -95 56 -31 -6 34 -29 69 121 -117 46 44 -42 88 -100 -66 -8 
+-8 18 -59 37 -100 37 71 18 -47 -119 49 -119 45 -119 -17 57 -95 -100 6 -50 -12 -46 -128 -91 -75 75 -89 -72 108 -18 46 -18 
+19 -98 7 111 7 111 -110 -17 -54 47 -25 79 36 -71 38 -107 39 61 74 118 77 -34 -98 60 -103 -30 -98 82 -111 -14 84 -64 
+22 84 11 -98 -89 -6 -89 -42 -91 -66 78 11 77 -37 -97 -10 41 61 38 -67 61 3 -105 -111 -104 113 84 72 17 -90 9 -5 
+50 -75 51 -13 50 -121 -77 -52 -77 -118 -77 -92 -53 -100 -105 -19 92 54 37 10 18 53 101 67 -39 -117 -78 -69 -59 52 -39 -49 
+-44 -128 -60 68 -78 94 50 -102 -29 -106 83 -109 -13 38 55 58 -9 72 -98 114 -98 48 111 96 -71 -39 -14 77 -53 39 -14 125 
+-13 -65 94 -127 90 -63 93 -47 91 -96 91 -80 -74 96 116 -91 -25 -54 -6 85 -48 -86 -91 -85 122 87 -21 -81 46 90 61 -66 
+-58 111 -51 -127 -75 -124 -75 105 107 127 40 -76 46 44 47 124 -71 46 102 93 79 -111 86 -47 -102 -94 -79 -11 126 -21 91 -117 
+21 -118 69 -59 55 54 -72 108 -88 -37 -120 -38 40 -40 56 -72 105 -18 -90 -86 77 31 75 120 37 23 75 -83 75 43 74 -33 
+111 -26 110 -66 -8 -107 -51 87 -107 95 125 -38 -110 -76 101 -80 -52 -95 108 -49 86 -52 86 -31 -42 -21 -37 -36 -73 29 40 87 
+46 -49 47 31 -37 30 -78 -67 115 7 99 71 -55 -114 -105 59 -105 -20 -68 80 97 87 81 -73 -117 -80 75 -78 75 90 25 92 
+-39 93 101 80 -75 -75 -22 125 117 74 -11 72 -115 87 77 123 -83 102 -19 -90 -38 -41 -69 121 -69 -81 -20 -15 -40 -45 86 -89 
+85 87 90 -9 110 -81 96 -17 -51 122 -65 -6 -50 6 -93 -122 -118 125 -104 125 57 -5 30 54 70 55 -10 127 -51 -6 -70 -71 
+73 -93 -87 -76 -23 -61 126 -31 126 -23 -127 -120 3 125 -51 -114 -51 -51 45 -102 45 101 -83 112 -85 -92 117 -14 96 -62 -63 -53 
+-33 120 127 -45 -35 -58 108 -85 111 -89 -73 -105 30 2 -121 36 -121 30 127 -101 -8 -19 -11 -61 65 -121 123 -113 -80 -114 -76 125 
+103 -8 93 109 7 -75 -93 -92 19 -22 92 -34 57 -43 -107 -46 37 -19 -114 -21 30 62 26 120 -76 -73 -57 -91 -89 -29 123 -53 
+-17 -9 31 -45 61 86 115 92 -27 120 -39 9 -62 -119 -94 19 -97 78 -26 -97 -100 62 -107 117 -22 -23 -23 -28 -45 99 -67 75 
+122 -17 -100 -119 61 115 -83 47 -68 111 -16 108 -48 -39 -13 -25 124 -49 -99 -23 -9 -20 63 121 -34 -11 -4 -79 11 -50 23 -114 
+94 100 93 -20 -70 -28 112 -87 115 -64 126 -96 -29 7 -5 31 58 6 29 6 59 -121 28 -121 -70 47 59 93 -18 25 -98 55 
+124 -30 -118 -5 -107 -45 87 -67 -81 -98 -69 22 112 -19 -46 -56 -4 -111 -31 -21 81 -41 111 -34 72 -72 33 -67 -55 -69 -7 -24 
+86 -6 -83 -25 -73 115 110 -49 -36 89 115 23 125 -73 -28 -98 -46 -67 -118 -5 -102 -9 27 126 52 -3 -79 93 -22 32 61 62 
+-22 61 58 -16 96 -63 -125 59 99 -36 -79 39 63 101 -1 -12 126 -68 -24 33 -7 97 -59 -124 -50 68 -13 35 -37 71 -57 38 
+125 39 47 63 94 -8 120 -4 73 -42 -109 -103 -89 -59 63 43 -1 92 -5 -52 -28 -39 119 -65 120 -4 50 48 21 59 53 -2 
+92 -12 -4 -45 -81 -101 95 -88 -65 -40 -1 -46 -18 101 -17 116 -40 -12 -3 87 25 -81 102 94 -105 -68 81 127 115 -32 45 -21 
+109 -1 -69 -104 119 19 51 -71 -17 -79 -17 43 63 -104 126 -24 -7 24 -12 -15 -18 -89 -116 79 -97 126 3 -9 -124 -13 -5 -113 
+112 102 42 0 0 0 9 112 72 89 115 0 0 46 35 0 0 46 35 1 120 -91 63 118 0 0 20 22 73 68 65 84 
+120 -100 -19 -99 7 116 20 -43 26 -57 -65 108 54 -39 20 -22 19 1 -123 35 -126 6 14 85 -87 74 9 77 -31 -123 42 -120 
+-12 22 -118 -128 65 -86 -12 -98 -48 2 60 33 -128 68 64 4 68 -92 8 -126 -12 34 -120 16 125 -76 71 17 17 14 71 -27 
+1 2 2 34 53 -55 -110 -74 121 -9 127 -61 -60 109 115 103 -74 -111 125 -100 -5 59 -25 -98 44 -77 -69 51 119 103 -26 127 
+-65 -17 126 -33 119 7 99 118 118 54 73 36 18 -1 -63 -104 -41 29 -112 72 36 -74 72 81 74 36 126 -122 20 -91 68 -30 
+103 72 81 74 36 126 -122 20 -91 68 -30 103 72 81 74 36 126 -122 20 -91 68 -30 103 72 81 74 36 126 -122 20 -91 68 
+-30 103 72 81 74 36 126 -122 20 -91 68 -30 103 72 81 74 36 126 -122 20 -91 68 -30 103 -8 76 -108 1 1 1 -81 -78 
+63 17 -66 -38 -65 68 -14 20 -14 32 59 59 123 -113 79 68 -55 4 89 -60 96 48 -100 -14 -59 -66 37 -110 -89 17 38 -58 
+-69 -84 -115 -60 107 95 89 -54 -23 62 -38 -81 68 -14 -44 -63 -60 120 -98 -75 -58 -84 -35 -64 -65 -67 46 74 102 37 -97 101 
+-19 77 -5 -19 -123 11 23 -90 -64 -64 64 -121 -49 103 101 101 57 -35 -18 -117 -9 -17 -36 -7 -117 44 22 -49 22 117 -121 -123 
+-123 -111 -55 100 -30 -5 76 77 77 -91 71 -113 -52 30 -17 -45 26 -125 33 -64 -85 -5 -77 -34 111 -63 -126 -123 28 -50 -107 -11 
+-7 -71 127 -1 62 101 100 100 -16 -41 -54 -11 122 -110 -41 71 33 57 57 -103 -99 -41 71 57 -3 40 16 64 -63 65 -22 -65 
+43 -56 24 64 25 -103 -22 -25 -53 -107 -9 -17 61 -52 -90 -76 -12 -65 -33 -61 -79 -61 67 -67 -77 127 -5 125 43 48 33 -82 
+102 109 24 107 -73 -107 109 -66 -80 -108 -75 -104 40 -53 88 111 -64 5 -2 -23 -89 -97 -24 -71 -25 -98 -13 -63 -31 -76 -71 122 
+-11 42 -115 26 53 -118 54 108 -8 82 -41 -25 113 3 -105 47 95 -127 106 -41 -82 77 -43 -86 85 -93 114 -27 -54 81 -23 -46 
+-91 -87 88 -79 98 20 18 18 98 -13 89 -36 84 127 -4 -15 7 -3 -6 -21 -81 116 -14 -28 73 -6 -2 -5 -17 -23 -64 -127 
+3 -12 -32 -63 3 -105 -5 89 -78 100 73 90 -67 122 53 -11 -17 -33 -97 46 92 -72 -32 -14 -9 69 84 -82 92 -123 -66 -5 
+-18 59 42 80 -96 -128 -45 -9 -17 -34 -67 75 53 106 -44 -96 75 -105 46 -15 126 -32 55 -108 41 83 -58 -23 103 125 73 74 
+74 10 63 -17 63 -1 -4 51 -103 -126 -119 -114 -83 47 64 37 -118 26 124 126 -36 93 73 25 -44 119 82 10 19 78 54 -65 
+-2 49 -99 -126 105 114 76 40 23 -91 39 96 -116 75 -8 -4 17 -59 126 -116 65 -58 86 -68 22 -117 -91 3 19 -29 6 -5 
+-17 -8 66 -108 -99 -20 55 -76 107 -41 -114 -118 22 45 -22 -125 67 -119 -127 96 54 108 -40 64 -93 71 -113 -26 -62 20 1 11 
+-40 -92 73 19 122 -5 -19 -73 -23 -115 55 -34 -48 61 -128 96 -108 -57 77 -116 -42 -80 97 67 26 62 124 56 -65 -79 54 111 
+-34 76 11 22 44 -96 19 39 78 -24 -18 111 -25 -50 -99 41 50 50 -110 -114 28 57 66 93 -69 118 -91 -35 -69 119 121 -51 
+106 118 -21 -42 77 85 -112 96 -21 -42 -83 116 -19 -38 53 -2 -70 117 -21 -42 124 16 -54 11 14 30 60 -56 5 9 -98 45 
+108 -96 -72 68 -77 -49 -113 121 -7 -70 -123 -66 63 -107 -59 -49 53 6 -126 105 -125 67 -87 -33 59 38 10 18 88 104 61 -4 
+121 -41 66 3 -89 -90 -46 -10 -125 25 54 -37 -103 16 47 -78 -42 -105 -75 3 -50 -66 -25 85 81 50 11 89 -34 96 48 116 
+-77 -34 -122 81 7 35 -65 -56 -123 -15 5 55 111 -34 -92 17 35 70 -48 -70 117 107 -123 55 118 -59 -118 21 -87 111 -33 -66 
+-44 -91 75 23 42 82 -92 -120 87 -114 29 30 30 -50 69 0 -111 97 80 24 50 100 8 -35 -66 125 91 -8 29 120 19 -24 
+3 -128 120 -66 -2 -6 107 -102 50 101 10 -51 -103 51 39 -41 -91 116 23 12 24 45 90 -76 80 125 31 -49 105 90 -74 108 
+25 63 14 6 39 -12 -125 93 75 -113 -114 -23 14 112 89 -47 15 -123 79 -89 -122 83 100 117 -33 101 -19 -78 44 68 19 23 
+-104 -23 -13 109 57 126 101 -127 124 1 -76 116 74 24 -75 106 24 76 -98 -2 -4 83 -25 50 -87 -9 -92 84 -70 -16 -33 44 
+-101 -19 -52 58 -18 96 127 -38 -79 115 -98 -90 -10 93 111 -1 -30 105 -10 27 34 35 -21 51 -41 -87 -78 -105 15 35 6 86 
+106 -24 -48 -95 66 -21 8 49 -58 -58 -58 114 -85 -32 -85 1 3 -5 -19 -44 -87 19 -43 -85 87 -113 91 96 -111 -43 -124 -53 
+86 -91 74 21 -101 -17 78 -99 58 -107 -69 -49 3 6 12 -48 20 -75 -120 -88 -88 40 -18 -126 -85 1 -53 124 -6 -12 105 -2 
+-70 110 -35 -70 54 -3 120 -110 92 -68 120 -111 -66 -7 -26 27 -2 26 2 89 -67 45 -115 55 95 -112 -50 -58 -71 -45 23 -78 
+114 69 83 -78 -104 -127 86 -59 -121 -45 -21 85 60 -109 4 -124 -66 106 75 26 -115 77 48 -45 -125 100 7 119 53 -114 -3 -119 
+99 -126 -52 114 -2 -19 28 -68 38 74 -52 35 89 123 -51 126 123 -17 -34 -67 -103 27 -32 -95 31 -96 19 -52 -117 62 -8 -32 
+3 90 -77 102 -115 -86 117 -127 53 -116 -117 -117 -29 -42 -15 73 89 111 88 -86 109 -37 -74 113 -9 88 113 -51 -84 -63 60 21 
+-25 -55 25 109 -37 -74 -27 -126 -126 -27 -3 -15 -57 31 93 62 54 44 31 -66 43 98 -27 -54 -107 60 104 5 -94 -93 -93 -71 
+-91 127 -46 -64 90 -81 90 -75 -118 -9 3 -34 85 -36 -5 -52 -123 108 111 -14 -55 -79 -82 -35 -78 80 -9 49 41 -71 -126 -84 
+86 62 -112 -42 -49 -51 -25 -15 -36 -11 62 19 -31 -60 -123 102 90 -66 41 -35 -58 59 -125 8 89 107 -49 -38 102 61 -5 -15 
+-90 -91 -116 100 -94 44 97 -65 113 -58 -116 25 52 123 -10 108 -73 119 -38 -68 121 115 26 55 110 -100 112 62 4 -10 -20 -39 
+67 -3 -6 -11 83 -75 -114 -72 -48 45 90 -76 -92 -113 62 -6 -120 -117 68 11 -20 7 -127 -111 -93 71 -113 114 33 -31 -33 -104 
+43 -126 -126 5 11 -46 75 47 -67 68 53 107 -42 -92 -106 45 91 -46 43 -81 -68 -94 41 112 4 -119 48 -57 108 -43 -86 85 
+-82 0 20 -80 -81 -90 77 -101 -86 126 -73 66 -123 10 -76 127 -1 126 26 60 120 -80 -90 59 110 -49 107 -81 -67 -58 -83 -83 
+26 -80 -64 95 126 -103 19 0 -125 -8 27 53 106 -92 -6 89 -72 -105 109 -38 -76 -95 -21 -41 -81 -21 62 -66 94 50 51 51 
+-23 -9 -33 127 -25 -81 -15 -5 -26 127 -2 -120 62 94 -17 -70 -107 -116 29 24 -62 -35 -49 -107 95 -89 81 70 38 81 -81 54 
+38 -38 119 36 -125 78 -98 -49 -94 15 -94 77 116 -2 -41 44 -22 -58 4 -7 -33 107 -106 -36 -17 -36 125 -112 77 45 99 -110 
+85 -9 25 -60 84 -46 -66 105 48 13 -113 14 -95 64 21 -35 -2 114 57 -117 -6 -57 -90 -46 -111 31 51 109 -74 51 33 -2 
+-101 -75 104 -42 126 -47 -5 27 -68 41 -54 -50 -50 54 -70 27 69 -60 28 11 98 -18 -34 -67 -69 -48 -46 34 -54 57 126 -4 
+120 90 -68 -8 99 -43 -101 21 -106 104 -20 -40 -79 60 -32 35 -38 23 68 -73 113 -29 70 90 -66 124 57 23 -93 -102 -75 -67 
+113 -29 6 -1 93 59 119 -18 100 46 102 28 119 -47 103 -51 -102 -59 69 42 2 -127 32 52 124 79 1 -125 -123 30 -21 -124 
+-13 -127 126 97 42 0 -73 -42 94 -40 -50 -48 -77 111 88 -89 -28 -28 -121 -4 -75 86 64 -18 -37 111 -65 -51 117 47 125 -115 
+-75 104 -12 -128 0 -51 -62 -15 -31 92 -112 83 23 -101 -87 96 -2 0 -118 -23 24 66 43 -104 56 -81 -34 -80 -48 -24 -66 33 
+116 -32 104 38 -59 76 77 -95 -101 127 -39 -34 39 -94 99 33 -6 58 101 96 40 13 -24 104 82 21 -28 -42 3 -23 52 100 
+102 -86 -61 126 -103 16 -1 100 -83 59 2 59 -82 -4 22 -81 -120 -110 89 -56 72 -125 -63 -16 79 111 -20 11 96 -76 94 -70 
+116 -87 48 36 15 119 7 -111 -70 62 125 -6 -16 48 -66 26 -80 -80 11 23 46 20 -70 112 16 31 110 120 88 117 -83 40 
+-83 61 24 8 -48 -113 102 -51 -102 -47 39 -97 124 -62 -35 77 17 120 -33 58 -86 -6 -4 -13 37 -124 65 24 107 48 -96 32 
+-75 83 -87 82 37 122 -17 -67 -9 52 -5 26 17 81 -106 71 -110 -43 -64 57 92 -76 104 17 -17 -117 -30 -26 -86 5 120 112 
+-114 -84 -125 48 -2 68 -79 103 2 104 -7 -76 112 -86 -3 -86 -111 6 -60 -90 80 -117 6 65 -44 -84 94 48 -51 92 -106 35 
+-50 113 -3 67 -40 60 47 -99 -58 -49 55 83 -118 89 -65 -105 81 -70 -124 -127 62 -102 16 70 -115 106 -87 15 -28 23 -81 90 
+40 113 109 26 -3 121 -41 -15 61 -28 -20 -39 -97 -45 -20 111 -11 -68 -80 -108 111 -78 73 -84 67 -66 69 13 20 23 -80 86 
+-40 126 59 110 -116 -8 -8 120 -118 -119 -119 17 70 -1 96 29 17 -103 76 76 76 20 70 38 -79 63 45 65 94 -66 124 -103 
+122 -11 -22 69 73 73 -121 60 74 63 96 62 -117 104 47 92 -59 82 -91 74 -87 126 14 -17 -123 -124 -124 -26 90 58 -52 51 
+69 65 24 103 -64 -91 -33 -69 119 47 -17 55 44 -70 26 -80 124 -94 -44 14 -10 -95 12 104 112 -85 69 -125 32 -126 48 -104 
+34 -8 27 -27 74 7 -46 -102 -39 -31 84 -92 112 0 -11 -103 -104 66 -125 -70 -122 80 -27 -120 64 26 18 -97 74 81 -11 -116 
+-44 -76 110 16 -59 37 62 -94 5 95 -92 -71 116 125 -101 -44 14 -94 -60 73 97 -102 -13 -52 50 37 13 -76 107 73 126 -38 
+119 56 -125 70 -51 53 59 68 91 -39 125 -100 -97 -3 89 -51 -102 67 -68 69 13 -81 -120 -110 -115 2 -109 -11 124 -114 117 -80 
+20 107 75 -20 5 9 55 -85 78 -99 -70 -36 58 106 -35 -96 73 73 73 52 112 -32 64 -89 1 19 -5 125 98 46 -118 -76 
+-124 26 103 -50 -100 -31 55 -93 -85 -42 81 -115 43 87 46 -13 121 104 -49 -98 61 117 125 30 -125 -122 -34 -49 -38 -125 -13 -76 
+123 -9 110 -98 23 93 -79 98 -123 -61 -5 -16 16 68 -65 29 57 -36 37 75 -106 -28 -2 27 30 -121 -56 -75 -65 117 -21 22 
+13 26 52 -56 -83 -66 -118 64 63 54 109 -38 36 -12 118 -44 104 84 -53 -56 -45 38 -104 19 34 31 24 63 60 -116 -62 66 
+-120 -6 77 -55 17 103 -7 50 -127 -12 30 -101 -25 109 -40 -101 -95 91 -112 112 -125 -121 -11 8 -95 81 125 66 40 36 88 95 
+94 4 -10 -93 73 -99 32 -38 91 62 -112 -94 -57 -91 -48 -127 99 -103 -10 31 -87 -50 -18 -7 -74 121 17 -24 17 -14 56 58 
+123 -28 -79 73 -49 5 55 15 -26 123 -61 -122 13 -45 -100 59 -62 -67 -124 -27 83 74 -80 68 52 104 -48 -112 -117 87 45 0 
+3 33 -62 -27 -60 -4 -48 91 -32 -62 35 63 42 2 -43 63 40 -51 3 -104 -125 106 -51 67 69 -32 -36 65 88 85 -85 86 
+-27 81 103 107 -81 1 22 56 34 66 125 -111 14 60 4 101 110 91 -67 122 117 122 -3 -11 -41 -123 -57 66 81 3 -102 -73 
+-63 -36 92 9 52 -23 5 3 110 -41 22 65 52 123 68 24 -99 60 -105 -55 93 -45 69 19 -61 -24 30 19 -25 -32 25 102 
+46 78 -120 -85 -19 -32 100 -121 -64 -117 8 -72 -63 -119 19 -61 -103 -123 13 114 43 79 -119 98 -121 69 -20 -5 45 6 60 -76 
+-103 -89 -78 123 62 16 -47 87 -10 -46 127 68 -55 58 53 -102 -75 88 -42 108 98 -36 -120 12 46 94 -68 88 51 47 118 -4 
+-8 113 46 48 -67 -43 49 16 55 -124 -82 22 -79 -59 -24 12 11 -29 77 65 42 -57 21 9 1 -64 5 -124 120 113 99 33 
+13 98 95 -74 103 13 -54 -10 96 17 69 -127 26 12 58 112 -9 113 14 -111 19 -59 111 82 10 54 -44 6 57 -52 37 97 
+93 21 17 -61 90 -25 69 26 4 108 -39 -78 -59 37 79 5 98 27 -47 43 -124 71 82 55 50 11 8 81 98 -34 119 -20 
+-89 76 90 -10 85 26 125 18 23 78 87 -82 91 -88 85 76 -78 75 -63 34 -100 -77 102 -111 -63 116 -10 -105 44 -34 -84 9 
+102 -57 124 -90 -112 -127 -22 -80 57 43 -36 85 17 47 62 111 -96 126 29 76 52 118 -98 109 37 -110 -63 96 -128 -37 -46 69 
+79 95 124 42 74 38 -62 74 -84 -83 101 29 -86 100 -67 29 110 -37 -56 -111 35 -7 -24 46 -70 25 96 17 17 -127 69 85 
+-117 -98 104 -93 66 -99 58 117 -124 22 8 117 -86 -101 55 111 -46 -67 63 -67 -108 45 91 86 104 77 96 -99 48 -113 3 90 
+65 24 12 28 -104 11 23 42 84 -120 11 72 -28 -42 99 -2 -115 -29 98 126 9 -105 53 45 45 77 -8 -5 -17 -35 -69 -57 
+-93 -82 0 3 87 -57 -114 29 -75 126 -102 79 -64 60 124 -35 -70 117 -70 63 -113 72 -24 -65 70 -122 82 -57 102 -63 -76 112 
+117 78 -70 100 -58 -48 -48 92 113 -82 -100 -106 -113 -66 59 -98 65 -47 -29 83 -72 75 -21 10 24 40 -111 70 17 1 -31 54 
+-113 52 -46 -126 113 97 84 -68 -120 -70 56 -21 87 51 122 -76 -80 -64 87 -21 41 97 17 99 -103 24 71 -37 -65 -121 -100 30 
+92 46 45 -73 -19 -36 -71 115 60 -63 127 -4 -8 49 -105 127 92 -29 -58 -115 -123 121 -51 31 126 -8 -63 -21 43 49 48 -48 
+96 14 43 42 -43 67 -114 20 43 85 0 42 -119 68 65 24 88 84 4 87 96 -51 -22 -41 -81 79 -13 -25 -49 -89 -10 -19 
+-37 11 -13 -95 -56 -65 34 101 -127 -30 127 -47 -17 -33 -79 99 71 -82 117 -126 -16 -111 110 -55 11 48 -1 -58 117 -42 -125 18 
+97 -83 86 -63 72 -109 22 -102 -87 74 57 35 -67 -45 52 40 87 -100 115 -104 43 -117 -22 -97 -95 -15 -87 78 87 99 120 3 
+-36 51 -88 99 77 49 -89 -48 -114 -113 -13 -85 126 -50 104 12 -96 32 -93 -13 85 33 122 -16 -59 -46 -83 70 -84 45 -77 95 
+41 2 87 10 -42 113 -52 -104 49 66 -21 8 11 -127 27 112 -14 -28 -55 46 89 71 107 68 -55 114 -32 -19 74 30 -4 54 
+8 18 -94 81 3 1 42 -72 -22 -72 -80 -42 117 -82 106 40 -75 -88 0 9 -2 -18 -35 -69 -15 -63 4 -43 72 34 17 -63 
+29 22 13 120 -56 -59 -94 -126 71 -31 -35 119 -33 85 61 31 -72 22 -16 42 -36 89 -15 -94 7 -92 99 -12 -44 -11 42 17 
+86 44 -91 26 -11 -81 84 -22 -44 60 -104 -117 115 92 -126 -103 -1 -19 -8 -49 96 -102 -66 -124 -51 37 -105 105 -57 26 -68 -63 
+-63 -1 100 -15 114 58 -75 -68 -27 -115 -37 22 7 65 90 44 -106 -75 122 -9 -17 -51 50 59 -36 41 115 -104 117 -20 99 -1 
+30 92 47 88 71 -44 -128 -118 82 29 -80 12 -80 -114 -56 -5 121 2 -84 -106 8 36 -16 113 -13 -22 9 24 105 -95 20 57 
+96 94 38 10 42 33 -119 -81 12 50 -80 -28 -27 -53 -105 87 -35 39 -36 -36 109 -37 -74 -38 108 -125 -104 -111 2 -126 -117 10 
+-63 -70 91 -97 10 -53 -124 -27 101 0 -41 67 -76 31 -12 3 125 -11 -10 -36 -37 21 26 -44 48 -46 -118 -23 57 17 86 -52 
+-45 16 21 69 93 44 -60 -39 -83 -107 -119 42 -66 28 -56 -93 -83 -21 119 -85 -101 -91 74 17 -127 20 85 -41 -7 -4 58 -109 
+77 31 -41 -18 76 115 72 -4 -117 120 -75 -100 65 85 -112 -8 63 -104 55 -17 119 58 -48 -100 -43 -69 127 111 21 15 -64 103 
+-101 -25 108 -123 -56 -96 65 -125 121 5 -118 -56 58 42 -55 123 88 81 111 -116 -54 90 55 -47 11 47 -68 -64 45 49 -126 65 
+-98 -128 8 -25 -36 -71 115 121 25 -100 26 -120 -58 34 -81 -88 -124 -4 113 78 68 -23 7 101 -59 -122 -102 123 -115 96 23 -124 
+-94 53 16 56 3 -106 79 -79 -64 -24 7 10 16 68 -96 -70 41 47 5 -39 49 42 56 55 -120 -77 110 103 58 -51 28 22 
+74 127 -34 -55 -90 9 -13 -1 22 103 -105 -111 -55 116 -24 -124 56 -62 58 -80 -77 -119 122 -66 -91 94 71 11 81 -22 -123 -49 
+107 71 -87 15 -6 8 18 -19 74 -78 29 32 -40 53 77 101 109 -122 -34 99 120 44 74 38 -56 110 -84 -51 123 44 -52 92 
+94 124 -15 69 -98 119 20 5 51 0 70 99 44 109 66 -63 -74 -73 -40 -73 111 -97 112 -2 5 107 -115 -54 24 -93 -47 -24 
+-78 -101 -116 -101 57 42 -86 25 95 -123 2 -117 43 18 5 -84 18 106 69 127 -5 -19 -73 -36 109 85 -85 86 -93 90 -75 106 
+-87 126 7 125 81 -126 48 106 32 64 -46 -65 127 63 -18 81 36 36 36 -24 -98 19 -62 98 111 -33 -66 -99 -65 70 37 17 
+-6 -90 6 92 102 -120 50 47 -64 57 30 -34 -61 68 -79 -17 -121 -46 23 59 -46 121 16 103 -18 -24 48 -6 -9 -87 76 -38 
+-72 -9 111 113 -94 94 -43 62 89 -17 12 -72 -65 34 -86 -108 53 -46 55 -121 -75 -35 104 -84 36 65 94 84 109 37 9 10 
+-46 39 44 48 -37 88 93 44 -47 98 -83 -125 -26 -50 -83 112 91 -108 74 33 -128 125 121 29 44 0 -26 75 31 126 -8 -95 
+-26 -51 -126 121 -42 -124 9 19 120 -18 14 69 -39 -18 112 -27 -54 21 -121 121 -55 -82 93 -69 -72 -40 -75 86 -50 35 45 -46 
+-95 67 7 110 -91 -79 126 17 34 -78 -33 23 110 -112 -94 69 -117 -15 -12 13 68 -120 37 88 90 5 -19 -80 72 88 62 -122 
+37 87 16 -112 53 72 91 -120 -50 11 -66 -89 39 69 0 75 -118 -89 20 -100 58 117 -118 -49 17 -75 -26 -47 -32 -85 -81 -66 
+-54 77 -103 -12 -24 -47 67 -104 -114 57 127 -2 60 119 -17 -35 -67 46 34 -18 -36 -71 -29 112 94 20 -112 -14 72 24 19 -54 
+45 -37 -12 -91 -113 40 -104 -35 -95 -77 -122 -123 -47 -22 -19 105 -12 -53 101 11 23 -25 -95 -1 56 -81 97 85 67 107 -38 -70 
+100 74 24 79 -6 -85 89 92 -120 -79 103 27 19 -67 -33 -59 68 5 -13 57 -97 126 -95 124 15 46 -75 -67 -72 -103 32 -105 
+-78 -74 67 87 71 31 -29 -106 40 -103 24 -121 -78 54 -99 53 27 59 -114 -101 21 35 -73 86 -3 -89 2 -62 -8 -98 -52 31 
+33 34 103 55 35 110 60 -84 -107 -60 60 86 116 -29 1 -12 121 -46 -92 73 -68 33 8 2 65 -32 -90 1 88 13 -126 8 
+-87 43 -47 73 124 31 5 -14 107 -42 124 -31 -32 -126 34 50 -117 65 64 13 -120 0 3 -124 43 -96 -78 -87 65 -125 6 -68 
+60 17 -71 92 53 -84 -45 15 -7 -14 -27 -41 92 -50 -123 107 -125 -118 39 111 -125 1 75 73 -33 -40 -125 8 -21 -46 41 -31 
+20 -55 -26 -111 -125 103 -90 82 -67 -86 70 106 -41 52 39 -120 -125 26 -42 73 49 -18 -43 -80 66 108 -94 -59 -46 72 111 -96 
+84 -18 40 115 -109 -113 -98 -55 -92 -101 -73 -77 -55 -56 -116 107 -55 -30 6 -86 89 49 -112 -51 73 -115 -62 -89 16 -36 -71 -97 
+-51 107 110 -99 60 97 96 7 107 -125 117 119 -12 49 46 -119 18 79 22 96 -19 115 102 29 -85 91 111 -57 -56 -37 -66 125 
+7 110 29 -97 -44 115 120 -84 -25 71 -50 -128 40 48 119 -124 -40 -12 -82 -25 -60 -68 -41 -43 58 84 5 -36 -12 -120 -82 98 
+80 82 91 -112 12 65 -118 -50 15 82 25 -88 -63 117 21 -72 -68 88 -42 -123 1 14 3 -111 -77 65 -28 -16 -31 -61 -52 -86 
+-98 -28 -81 -35 -87 -73 -11 22 72 -125 -32 119 -38 3 23 115 -43 -116 112 42 -2 108 0 47 -115 -21 -3 -74 -119 106 86 14 
+-92 97 -77 114 -60 -39 -70 113 16 -51 88 -14 -120 22 -82 121 -28 114 -86 97 13 -77 -78 93 91 6 -13 -60 -66 26 -120 63 
+-62 45 117 117 -111 115 18 19 60 6 16 123 55 26 -49 111 101 77 125 -108 20 -96 -69 7 76 -116 -99 -103 24 -41 -40 111 
+47 94 -68 56 23 -93 86 14 -51 -37 -96 22 19 -18 -104 26 -80 82 -15 -15 51 -7 124 -50 -105 -125 5 44 35 -84 27 -60 
+32 10 -118 96 -32 66 1 -71 40 -3 32 10 -16 -24 1 -25 3 79 16 -8 -20 -77 -49 -8 -109 12 20 -108 21 30 -54 106 
+16 68 -126 -13 10 -21 5 -43 10 -11 -103 21 -5 116 90 56 95 -87 -113 60 -29 -124 -2 -95 -52 106 26 -88 -57 -104 20 -66 
+-122 -47 -74 -122 -43 -11 99 -94 -78 103 -56 -116 84 30 -59 -3 71 65 -17 60 -26 -28 -46 117 11 -51 92 106 102 115 94 -57 
+-70 90 38 -58 -49 44 22 75 -76 -69 -5 -42 20 -91 -88 16 -32 -83 -73 -34 -94 121 -13 -26 9 87 69 -8 10 60 -24 73 
+107 -18 -123 -109 -75 126 -3 122 110 65 80 61 4 81 120 35 81 -114 8 49 -22 70 81 -77 -119 36 -65 -34 90 92 81 -108 
+22 -13 106 -52 107 61 5 -125 16 22 76 79 -97 62 -99 71 87 -31 37 96 126 120 -24 80 -114 5 70 25 32 44 101 94 
+-128 121 62 -26 -5 -42 32 -62 -102 48 54 -116 -50 92 -56 -94 -27 -101 -46 -24 -61 -111 97 -12 48 37 -57 29 84 10 -52 59 
+14 -41 -114 -80 106 -127 -71 94 84 -1 -121 124 -1 -18 62 -9 7 -71 -55 -29 103 51 105 5 -21 -25 -105 123 -46 29 44 54 
+-98 -37 10 119 -43 -39 19 -22 92 65 -40 59 -75 66 0 -67 11 -112 125 5 68 -127 71 126 -24 5 22 12 -123 11 72 -51 
+-32 73 1 88 -65 -120 121 -104 94 -21 9 -41 20 117 -88 -57 -114 29 -29 79 0 -128 43 -24 106 -114 19 -7 87 -47 -4 22 
+2 -9 -28 57 60 -42 -64 18 -95 -64 31 -7 72 20 98 -32 92 -31 55 40 -117 -98 -13 -30 -102 1 -12 -29 -2 -3 123 -4 
+53 -6 50 -86 -73 -119 -58 -10 13 -91 -51 -5 -45 -23 8 -101 -53 89 -117 115 -15 -28 112 -70 -7 -105 -123 -94 -6 37 -45 -43 
+-101 110 -104 71 39 32 93 -47 108 64 50 53 -88 17 -56 3 73 111 -42 14 -46 -76 -100 -104 47 -98 -8 57 -109 -81 -4 -40 
+-14 109 -70 106 61 45 -77 -116 -97 -78 63 35 -15 -92 115 79 -5 -23 84 -108 -94 66 0 -100 76 -108 125 -99 61 123 -106 -81 
+-28 -49 11 112 -125 -119 -42 17 -86 -95 -120 89 17 52 92 -17 -105 95 126 -103 74 -108 40 65 -7 -13 -25 -89 96 84 30 51 
+-52 102 51 15 -10 64 -52 24 -35 111 -35 -70 -23 -111 91 -119 115 -122 106 28 -120 -38 25 112 47 -83 -97 70 -32 45 -32 -50 
+-30 60 41 -113 49 9 14 54 -15 -30 126 68 -99 -13 2 120 45 -54 121 44 -11 92 0 127 64 49 18 -1 63 -100 -54 -92 
+-88 -56 32 94 28 -128 28 31 10 -61 -89 45 49 -45 -6 93 -23 46 -41 -80 106 -127 -29 67 96 104 -72 46 17 -91 12 20 
+-15 -126 -127 -118 20 54 80 -120 41 -89 -104 -32 33 115 -93 111 -35 -79 -48 37 38 -64 -53 127 100 11 -81 61 19 99 2 -5 
+51 30 -71 72 111 -11 -47 65 -108 76 -112 -19 89 91 -64 90 113 -75 31 -123 -54 -2 -89 1 -120 -18 73 36 -57 -107 106 -100 
+-68 -64 -38 -59 -121 117 119 -59 -61 -16 37 -80 56 -117 -83 -98 -63 -77 108 -29 -33 -81 -75 10 -61 -67 5 -82 11 2 52 122 
+114 -99 -42 48 1 -98 101 13 43 26 52 -97 76 -25 14 -71 -94 -60 67 -81 88 75 100 -42 -79 -75 -73 15 34 -111 -4 -65 
+-61 -60 119 -20 -79 16 55 -71 -14 104 15 119 -80 -74 -108 35 30 87 31 120 52 73 -107 72 -98 18 -32 66 37 -79 -122 -1 
+13 107 -33 -109 60 112 -82 40 -15 -97 -116 60 -55 3 75 36 18 -25 -56 -1 -55 89 34 -15 51 -92 40 37 18 63 67 -118 
+82 34 -15 51 -92 40 37 18 63 67 -118 82 34 -15 51 -92 40 37 18 63 67 -118 82 34 -15 51 -92 40 37 18 63 67 
+-118 82 34 -15 51 -92 40 37 18 63 67 -118 82 34 -15 51 -2 7 -123 -34 -98 32 -100 91 -68 -116 0 0 0 0 73 69 
+78 68 -82 66 96 -126 
+]]>
+</Image>
+</inet:Report>
